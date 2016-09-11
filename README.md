@@ -94,16 +94,21 @@ Examples:
 * fBodyAccMag-kurtosis() and tBodyAccMag.energy() columns are ___not___ contained in mean_std
 * tBodyGyro-mean()-Z and fBodyGyro-std()-X are contained in mean_std
 
+This data frame was created with the aid of grepl() function, which enabled us to identify the variable names that contained either the word "mean" or "std" to select those columns.
+
 ## means_agg
 
 It's contains the means of each variable by subject and by activity. 
 
 IMPORTANT: Though the variable names are the same as those of total_df, in means_agg the variables represent means.
 
+This data frame was created with the aid of the aggregate() function, that enabled us to calculate the mean of all variables for each unique pair of subject_ID, act_label pair of values.
+
 ## means_agg_by_subject
 
 means_agg has its data sorted by act_label, while means_agg_by_subject has its data sorted by subject_ID.
 
+This data frame was created from means_agg with a very straight-forward sorting method.
 
 
 
