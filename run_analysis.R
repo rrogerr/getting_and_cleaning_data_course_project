@@ -106,12 +106,14 @@ total_df <- merge(train_df, test_df, all = TRUE)
 
 ################# EXTRACT STD AND MEAN MEASUREMENTS ##################
 
-mean_std <- total_df[ , grepl("mean|std", names(total_df))]
+mean_std <- total_df[ , grepl("mean|std|subject_ID|act_label", names(total_df))]
 
 ################### MEAN BY SUBJECT AND ACTIVITY #####################
 
-means_agg <- aggregate(. ~ subject_ID + act_label, data = total_df, FUN= "mean" )
+means_agg <- aggregate(. ~ subject_ID + act_label, data = mean_std, FUN= "mean" )
 
 # means_ag data frame is sorted by activity, the following sorts it
 # by subject_ID
 means_agg_by_subject <- means_agg[order(means_agg$subject_ID),]
+
+write.table(means_agg_by_subject, "./means_aggregate.txt", row.names = FALSE)
