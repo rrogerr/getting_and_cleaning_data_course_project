@@ -5,10 +5,10 @@ dataset the data from the following study:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-The output of the script is basically composed by three datasets:
+The output of the script is basically composed by four datasets:
 
-*total_df
-*mean_std
-*means_ag
-*means_ag_by_subject
+* total_df
+* mean_std
+* means_ag
+* means_ag_by_subject
 
